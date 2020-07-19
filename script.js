@@ -51,7 +51,7 @@ function renderQuestion() {
 }
 
 function progressRender(){
-    for(let qIndex = 0; qIndex <= lastQuestionIndex; qIndex++)
+    for(var qIndex = 0; qIndex <= lastQuestionIndex; qIndex++)
     progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
 }
 function answerIsCorrect(){
@@ -61,7 +61,30 @@ function answerIsCorrect(){
     document.getElementById(runningQuestionIndex).style.backgroundColor="red"
 }
 
+const questionTime = 10;
+const gaugeWidth = 150;
+var count = 0;
+var gaugeProgressUnit = gaugeWidth/questionTime;
+var TIMER = setInterval(counterRender, 1000);
+clearInterval(Timer);
 
+function counterRender(){
+    if( count <= questionTime) {
+        counter.innerHTML = count;
+        timeGauge.style.width = gaugeProgressUnit* count + "px";
+        count++;
+    }else {
+        count = 0;
+        answerIsWrong();
+        if( runningQuestionIndex < lastQuestionIndex){
+           runningQuestionIndex++;
+           questionRender(); 
+        } else { clearInterval(TIMER);
+                scoreRender();
+        }
+
+    }
+}
 
 
 
