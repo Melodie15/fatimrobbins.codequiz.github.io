@@ -1,7 +1,9 @@
 var start = document.getElementById("start");
 var quiz = document.getElementById("quiz");
+var qImg = document.getElementById("questionImage");
 var question = document.getElementById("question");
 var counter = document.getElementById("counter");
+var timeGauge = document.getElementById("timeGauge");
 
 
 var choiceA = document.getElementById("A");
@@ -47,6 +49,19 @@ function renderQuestion() {
     choiceC.innerHTML = q.choiceC;
 
 }
+
+function progressRender(){
+    for(let qIndex = 0; qIndex <= lastQuestionIndex; qIndex++)
+    progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
+}
+function answerIsCorrect(){
+    document.getElementById(runningQuestionIndex).style.backgroundColor="green"
+}
+function answerIsCorrect(){
+    document.getElementById(runningQuestionIndex).style.backgroundColor="red"
+}
+
+
 
 
 
