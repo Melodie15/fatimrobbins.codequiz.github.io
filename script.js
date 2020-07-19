@@ -82,10 +82,22 @@ function counterRender(){
         } else { clearInterval(TIMER);
                 scoreRender();
         }
-
     }
 }
+var score = 0;
+function checkAnswer(answer){
+    if questions[runningQuestionIndex].correct == answer) {
+        score++;
+        answerIsCorrect();
+    }else{
+        answerIsWrong();
+    }
+    if(runningQuestionIndex < lastQuestionIndex) {
 
+    } else{
+        
+    }
+}
 
 
 
