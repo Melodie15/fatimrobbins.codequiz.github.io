@@ -93,11 +93,24 @@ function checkAnswer(answer){
         answerIsWrong();
     }
     if(runningQuestionIndex < lastQuestionIndex) {
-
+        count = 0;
+        runningQuestionIndex++;
+        questionRender();
     } else{
-        
+        clearInterval(TIMER);
+        scoreRender();
     }
 }
 
+var start = document.getElementById("start");
+start.addEventListener("click", startQuiz);
 
+function startQuiz(){
+    start.style.display = "none";
+    counterRender();
+    TIMER = setInterval(counterRender, 1000);
+    progressRender();
+    questionRender();
+    quiz.style.display = "block";
+}
 
