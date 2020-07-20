@@ -104,6 +104,7 @@ function checkAnswer(answer){
 
 var start = document.getElementById("start");
 start.addEventListener("click", startQuiz);
+let TIMER;
 
 function startQuiz(){
     start.style.display = "none";
@@ -114,3 +115,14 @@ function startQuiz(){
     quiz.style.display = "block";
 }
 
+function scoreRender(){
+    scoreContainer.style.display = "block;"
+    let scorePercent = Math.round(100 * score / questions.lenght);
+    let img = (scorePercent >= 80 ) ? "img/5.png" :
+              (scorePercent >= 80 ) ? "img/4.png" :
+              (scorePercent >= 80 ) ? "img/3.png" :
+              (scorePercent >= 80 ) ? "img/2.png" : "img/1.png";
+    
+    scoreContainer.innerHTML = "<img src=" + img + "<p>" + scorePercent + "%<p>";
+            
+}
