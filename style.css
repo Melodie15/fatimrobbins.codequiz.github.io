@@ -13,7 +13,7 @@ h1 {
     font-weight: bolder;
     text-align: center;
 }
-#question {
+#questions-area {
     background-color: rgb(243, 231, 124);
     height: 200px;
     padding-top: 20px;
@@ -25,4 +25,10 @@ h1 {
 }
 p{
     font-weight: 700;
+}
+#scoreContainer {
+    background-color: rgb(243, 231, 124);
+    height: 30px;
+    padding-top: 20px;
+    border-style: solid;
 }

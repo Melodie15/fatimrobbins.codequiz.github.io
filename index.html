@@ -23,12 +23,12 @@
             <div class="col-md">
                 <div>
 
-                <button type="button" class="btn btn-secondary btn-lg" id="start">Start Quiz</button>
+                <button type="button" class="btn btn-secondary btn-lg" onclick="startQuiz()">Start Quiz</button>
             </div>
                 <br>
 
 
-                <div id="question">
+                <div id="questions-area">
                     <p class="lead">Questions</p>
                 </div>
                 <br>
@@ -43,16 +43,14 @@
                 </div>
                 <br>
 
-                <div class="lead" id="timer">
+                <div class="lead" >
                     <p>TIMER</p>
-                    <div id="counter"></div>
-                    <div id="btimeGauge"></div>
-                    <div id="timeGauge"></div>
+                    <div id="timer"></div>
                 </div>
 
 
 
-                <div id="scoreContainer" style="display: none;"></div>
+                <div id="scoreContainer" style="display: none;" placeholder="Score"></div>
             </div>
         </div>
     </div>
