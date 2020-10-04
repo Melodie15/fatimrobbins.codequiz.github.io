@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Code Quiz</h1>
-    <div id="start">Start Quiz</div>
+    <div class="jumbotron">
+        <h1 class="display-4">Code Quiz!</h1>
+        <hr class="my-4">
+        <p class="lead">How well do you know JavaScript?</p>
+      </div>
+
+<div class="text-center">
+      <button type="button" class="btn btn-secondary btn-lg" id="start">Start Quiz</button>
+    </div>
     
     <div id="quiz" style = "display : none;">
-    <div id="qImage"> <img src="img.png"> </div>
+    <div id="qImg"> <img src="img.png"> </div>
     <div id="question"><p>Question</p></div>
    
     <div id="timer">
@@ -22,9 +30,9 @@
 
 
     <div id="choices">
-        <div class="choice" id="A" onclick="checkAnswer(A)">A</div>
-        <div class="choice" id="B" onclick="checkAnswer(B)">B</div>
-        <div class="choice" id="C" onclick="checkAnswer(C)">C</div>
+        <div class="choice" id="A" onclick="checkAnswer( 'A' )">A</div>
+        <div class="choice" id="B" onclick="checkAnswer( 'B' )">B</div>
+        <div class="choice" id="C" onclick="checkAnswer( 'C' )">C</div>
     </div>
 
     <div id="progress"></div> <div class="prog"></div>
@@ -32,6 +40,6 @@
 </div>
     
     <div id="scoreContainer" style = "display: none;"></div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
