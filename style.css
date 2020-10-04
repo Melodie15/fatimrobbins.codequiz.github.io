@@ -1,7 +1,10 @@
 .jumbotron {
     text-align: center;
-    background-color: aqua;
     font-weight: bolder;
+    /* height: 25%; */
+    background-image: url("JavaScript2.png");
+    background-size: 55%;
+    /* height: 100%; */
 
     
 }
@@ -9,13 +12,13 @@
 h1 {
     color: purple;
     font-weight: bolder;
+    text-align: center;
 }
 #question {
     background-color: rosybrown;
-    text-align: center;
-    height: 300px;
-    width: 50%;
-    padding-top: auto;
+    height: 250px;
+    padding-bottom: 20px;
+ 
 }
 .col-md {
     text-align: center;

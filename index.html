@@ -12,10 +12,10 @@
 
 <body>
     <div class="jumbotron">
-        <div id="qImg"><img src="JavaScript.png" style="float:left" alt="Javascript and computer image"> </div>
+     <div class="title">
         <h1 class="display-4">Code Quiz!</h1>
-        <hr class="my-4">
         <p class="lead">How well do you know JavaScript?</p>
+    </div>
     </div>
 
     <div class="container">
@@ -25,7 +25,7 @@
                     <button type="button" class="btn btn-secondary btn-lg" id="start">Start Quiz</button>
                
                 <div id="question">
-                    <p>Questions</p>
+                    <p class="lead">Questions</p>
                 </div>
 
                 <div id="timer">
@@ -36,9 +36,10 @@
 
 
                 <div id="choices">
-                    <button class="choice" id="A" onclick="checkAnswer( 'A' )">A</button>
-                    <button class="choice" id="B" onclick="checkAnswer( 'B' )">B</button>
-                    <button class="choice" id="C" onclick="checkAnswer( 'C' )">C</button>
+                    <button type="button" class="btn btn-outline-primary" id="A" onclick="checkAnswer( 'A' )">A</button>
+                    <button type="button" class="btn btn-outline-success" id="B" onclick="checkAnswer( 'B' )">B</button>
+                    <button type="button" class="btn btn-outline-warning" id="C" onclick="checkAnswer( 'C' )">C</button>
+            
                 </div>
 
                 <div id="progress"></div>
