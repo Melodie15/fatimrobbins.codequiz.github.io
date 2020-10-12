@@ -2,7 +2,9 @@ var start = document.getElementById("start");
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("questions-area");
 var timer = document.getElementById("timer");
+var score = document.getElementById("score");
 
+start.onclick = startTimer;
 
 
 var choiceA = document.getElementById("A");
@@ -45,61 +47,61 @@ function renderQuestion() {
     var q = questions[runningQuestionIndex];
     question.innerHTML = "<p>" + q.question + "<p>";
 
+    for (var i = 0; i < q.lenght; i++) {
+
+    }
+
+};
+
+const questionTime = 10;
+var count = 0;
+var TIMER = setInterval(counterRender, 1000);
+clearInterval(Timer);
+
+function counterRender(){
+    if( count <= questionTime) {
+        counter.innerHTML = count;
+        count++;
+    }else {
+        count = 0;
+        answerIsWrong();
+        if( runningQuestionIndex < lastQuestionIndex){
+           runningQuestionIndex++;
+           questionRender(); 
+        } else { clearInterval(TIMER);
+                scoreRender();
+        }
+    }
+}
+var score = 0;
+function checkAnswer(answer){
+    if questions [runningQuestionIndex].correct == answer) {
+        score++;
+        answerIsCorrect();
+    }else{
+        answerIsWrong();
+    }
+    if(runningQuestionIndex < lastQuestionIndex) {
+        count = 0;
+        runningQuestionIndex++;
+        questionRender();
+    } else{
+        clearInterval(TIMER);
+        scoreRender();
+    }
 }
 
-// const questionTime = 10;
-// var count = 0;
-// var TIMER = setInterval(counterRender, 1000);
-// clearInterval(Timer);
 
-// function counterRender(){
-//     if( count <= questionTime) {
-//         counter.innerHTML = count;
-//         timeGauge.style.width = gaugeProgressUnit* count + "px";
-//         count++;
-//     }else {
-//         count = 0;
-//         answerIsWrong();
-//         if( runningQuestionIndex < lastQuestionIndex){
-//            runningQuestionIndex++;
-//            questionRender(); 
-//         } else { clearInterval(TIMER);
-//                 scoreRender();
-//         }
-//     }
-// }
-// var score = 0;
-// function checkAnswer(answer){
-//     if questions[runningQuestionIndex].correct == answer) {
-//         score++;
-//         answerIsCorrect();
-//     }else{
-//         answerIsWrong();
-//     }
-//     if(runningQuestionIndex < lastQuestionIndex) {
-//         count = 0;
-//         runningQuestionIndex++;
-//         questionRender();
-//     } else{
-//         clearInterval(TIMER);
-//         scoreRender();
-//     }
-// }
-
-
-// let TIMER;
+let TIMER;
 
 function startQuiz(){
-    // start.style.display = "none";
-    // counterRender();
-    // TIMER = setInterval(counterRender, 1000);
+    counterRender();
+    TIMER = setInterval(counterRender, 1000);
     renderQuestion();
-    // quiz.style.display = "block";
 }
 
-// function scoreRender(){
-//     scoreContainer.style.display = "block;"
-//     let scorePercent = Math.round(100 * score / questions.lenght);
-//     scoreContainer.innerHTML = "<p>" + scorePercent + "%<p>";
+function scoreRender(){
+    let scorePercent = Math.round(100 * score / questions.lenght);
+    scoreContainer.innerHTML = "<p>" + scorePercent + "%<p>";
             
-// }
+}
