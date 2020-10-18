@@ -1,91 +1,98 @@
 var start = document.getElementById("start");
-var quiz= document.getElementById("quiz-area");
+var quiz = document.getElementById("quiz-area");
+var questionEl = document.getElementById("question");
 var score = document.getElementById("score");
 var next = document.getElementById("next");
 var submit = document.getElementById("score");
+
+
 var currentQuestion = 0;
 var score = 0;
-var counter = 10;
-var totalQuestions = questions.length;
+var counter = 15;
 
-var choiceA = document.getElementById("A");
-var choiceA = document.getElementById("B");
-var choiceA = document.getElementById("C");
+
+var opt1 = document.getElementById("opt1");
+var opt2 = document.getElementById("opt2");
+var opt3 = document.getElementById("opt3");
 
 var scoreContainer = document.getElementById("scoreContainer");
 
 var questions = [
     {
-        question :"Who invented Javascript?",
-        choiceA : "Anthony Smith",
-        choiceB : "Brendan Eich",
-        choiceC : "Mark Johnson",
-        correct : "B"
+        question: "Who invented Javascript?",
+        option1: "Anthony Smith",
+        option2: "Brendan Eich",
+        option3: "Mark Johnson",
+        answer: "B"
     },
     {
-        question :"Which one of these is a Javascript package manager?",
-        choiceA : "Visual Code Studio",
-        choiceB : "TypeScript",
-        choiceC : "NPM",
-        correct : "C"
+        question: "Which one of these is a Javascript package manager?",
+        option1: "Visual Code Studio",
+        option2: "TypeScript",
+        option3: "NPM",
+        answer: "C"
     },
     {
-        question :"String values must be enclosed in ___",
-        choiceA : "quotes",
-        choiceB : "parentheses",
-        choiceC : "brackets",
-        correct : "A"
+        question: "String values must be enclosed in ___",
+        option1: "quotes",
+        option2: "parentheses",
+        option3: "brackets",
+        answer: "A"
     },
 
 ];
 
-function renderQuestion() {
+var totalQuestions = questions.length;
+
+function renderQuestion(questionIndex) {
     document.getElementById("start").disabled = true;
-    var q = questions[quIndex];
-    questionEl.textContent = (quIndex + 1) + '. ' + q.question;
-    choiceA.textContent = q.option1;
-    choiceB.textContent = q.option2;
-    choiceC.textContent = q.option3;
+    var q = questions[questionIndex];
+    questionEl.textContent = (questionIndex + 1) + '. ' + q.question;
+    opt1.textContent = q.option1;
+    opt2.textContent = q.option2;
+    opt3.textContent = q.option3;
 
 };
 
 function nextQuestion() {
     var userChoice = document.querySelector('input[type=radio]:checked');
-    if(!userChoice){
+    if (!userChoice) {
         alert("Please select your answer.");
         return;
     }
     var answer = userChoice.value;
-    if(questions[currentQuestion].answer === answer){
+    if (questions[currentQuestion].answer === answer) {
         score += 1;
     }
     userChoice.checked = false;
     currentQuestion++;
-    if (currentQuestion == totquestions){
-        startBtn.style.visibility='hidden';
-        nextBtn.style.visibility='hidden';
-        quizContainer.style.display="none";
-        result.style.display="";
-        result.textContent = score;
+    if (currentQuestion == totalQuestions) {
+        start.style.visibility = 'hidden';
+        next.style.visibility = 'hidden';
+        quiz.style.display = "none";
+        scoreRender();
         return;
     }
-    nextQuestion(currentQuestion);
+    renderQuestion(currentQuestion);
 }
 
 var timer;
 
-function Timer() {
+function clock() {
     timer = setInterval(clock, 1000);
     function clock() {
         document.getElementById("timer").innerHTML = counter--;
         if (counter == 0) {
-        clearInterval(timer);
-       }
+            clearInterval(timer);
+            scoreRender();
+        }
     }
 }
 
-// function scoreRender(){
-//     let scorePercent = Math.round(100 * score / questions.length);
-//     scoreContainer.innerHTML = "<p>" + scorePercent + "%<p>";
-            
-// }
+function scoreRender(){
+    document.getElementById("lead").style.display='none';
+    let scorePercent = Math.round(100 * score / questions.length);
+    scoreContainer.innerHTML = scorePercent + "%";
+    scoreContainer.style.display = "";
+
+}

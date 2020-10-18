@@ -24,27 +24,27 @@
                 <div>
 
                 <!-- <button type="button" class="btn btn-secondary btn-lg" onclick="startQuiz()">Start Quiz</button> -->
-                <button  class="btn btn-secondary btn-lg" id="start"onclick="clock();loadQuestion(currentQuestion);">Start</button>
+                <button id="start"onclick="clock();renderQuestion(currentQuestion);">Start</button>
             </div>
                 <br>
 
 
                 <div id="quiz-area">
                 <div id="question" class="question">Questions</div>
-                <label class="option"><input type="radio" name="option" value="1" /><span id="A"></span></label>
-                <label class="option"><input type="radio" name="option" value="2" /><span id="B"></span></label>
-                <label class="option"><input type="radio" name="option" value="3" /><span id="C"></span></label>
+                <label class="option"><input type="radio" name="option" value="A" /><span id="opt1"></span></label>
+                <label class="option"><input type="radio" name="option" value="B" /><span id="opt2"></span></label>
+                <label class="option"><input type="radio" name="option" value="C" /><span id="opt3"></span></label>
                 <br>
                 <!-- <button id="start"onclick="clock();loadQuestion(currentQuestion);">Start</button> -->
-                <button id="next" onclick="loadNextQuestion();">Next</button><br>
-                <button id="submit" onclick="clearInterval(myTimer);disableButton()">Finish</button>
+                <button id="next" onclick="nextQuestion();">Next</button><br>
+                <!-- <button id="submit" onclick="clearInterval(timer);disableButton()">Finish</button> -->
 
                 </div>
                 <br>
 
 
 
-                <div class="lead" >
+                <div class="lead" id="lead">
                     <p>TIMER</p>
                     <div id="timer"></div>
                 </div>
