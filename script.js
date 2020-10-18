@@ -3,6 +3,8 @@ var quiz = document.getElementById("quiz");
 var question = document.getElementById("questions-area");
 var counter = document.getElementById("timer");
 var score = document.getElementById("score");
+var next = document.getElementById("next");
+var submit = document.getElementById("submit");
 
 
 
