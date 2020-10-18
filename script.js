@@ -1,11 +1,11 @@
 var start = document.getElementById("start");
 var quiz= document.getElementById("quiz-area");
-var counter = document.getElementById("timer");
 var score = document.getElementById("score");
 var next = document.getElementById("next");
 var submit = document.getElementById("score");
 var currentQuestion = 0;
 var score = 0;
+var counter = 10;
 var totalQuestions = questions.length;
 
 var choiceA = document.getElementById("A");
@@ -39,7 +39,6 @@ var questions = [
 
 ];
 
-
 function renderQuestion() {
     document.getElementById("start").disabled = true;
     var q = questions[quIndex];
@@ -50,7 +49,7 @@ function renderQuestion() {
 
 };
 
-funtion nextQuestion() {
+function nextQuestion() {
     var userChoice = document.querySelector('input[type=radio]:checked');
     if(!userChoice){
         alert("Please select your answer.");
@@ -73,51 +72,16 @@ funtion nextQuestion() {
     nextQuestion(currentQuestion);
 }
 
+var timer;
 
-const questionTime = 10;
-var count = 0;
-
-
-function counterRender(){
-    if( count <= questionTime) {
-        counter.innerHTML = count;
-        count++;
-    }else {
-        count = 0;
-        answerIsWrong();
-        if( runningQuestionIndex < lastQuestionIndex){
-           runningQuestionIndex++;
-           questionRender(); 
-        } else { clearInterval(TIMER);
-                scoreRender();
-        }
+function Timer() {
+    timer = setInterval(clock, 1000);
+    function clock() {
+        document.getElementById("timer").innerHTML = counter--;
+        if (counter == 0) {
+        clearInterval(timer);
+       }
     }
-}
-var score = 0;
-function checkAnswer(answer){
-    if (questions[runningQuestionIndex].correct == answer) {
-        score++;
-        answerIsCorrect();
-    }else{
-        answerIsWrong();
-    }
-    if(runningQuestionIndex < lastQuestionIndex) {
-        count = 0;
-        runningQuestionIndex++;
-        questionRender();
-    } else{
-        clearInterval(TIMER);
-        scoreRender();
-    }
-}
-
-
-let timer;
-
-function startQuiz(){
-    counterRender();
-    timer = setInterval(counterRender, 1000);
-    renderQuestion();
 }
 
 // function scoreRender(){
