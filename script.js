@@ -1,19 +1,16 @@
 var start = document.getElementById("start");
-var quiz = document.getElementById("quiz");
-var question = document.getElementById("questions-area");
+var quiz= document.getElementById("quiz-area");
 var counter = document.getElementById("timer");
 var score = document.getElementById("score");
 var next = document.getElementById("next");
-var submit = document.getElementById("submit");
-
-
+var submit = document.getElementById("score");
+var currentQuestion = 0;
+var score = 0;
+var totalQuestions = questions.length;
 
 var choiceA = document.getElementById("A");
-var choiceB = document.getElementById("B");
-var choiceC = document.getElementById("C");
-
-var questionChoices= document.getElementById("questionChoices");
-
+var choiceA = document.getElementById("B");
+var choiceA = document.getElementById("C");
 
 var scoreContainer = document.getElementById("scoreContainer");
 
@@ -42,31 +39,14 @@ var questions = [
 
 ];
 
-var lastQuestionIndex = questions.length - 1;
-
 
 function renderQuestion() {
-    for (var i = 0; i < questions.length; i++) {
-        var q = questions[i];
-        var p = document.createElement('p');
-        testQuestion = document.createTextNode(q.question)
-        p.appendChild(testQuestion)
-        question.appendChild(p) ;
-        var nodeA= document.createElement("li")
-        var textA= document.createTextNode(q.choiceA)
-        var nodeB= document.createElement("li")
-        var textB= document.createTextNode(q.choiceB)
-        var nodeC= document.createElement("li")
-        var textC= document.createTextNode(q.choiceC)
-        
-        nodeA.appendChild(textA);
-        nodeB.appendChild(textB);
-        nodeC.appendChild(textC);
-        
-        questionChoices.appendChild(nodeA)
-        ;
-       
-    }
+    document.getElementById("start").disabled = true;
+    var q = questions[quIndex];
+    questionEl.textContent = (quIndex + 1) + '. ' + q.question;
+    choiceA.textContent = q.option1;
+    choiceB.textContent = q.option2;
+    choiceC.textContent = q.option3;
 
 };
 
