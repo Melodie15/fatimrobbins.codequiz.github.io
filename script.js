@@ -50,6 +50,30 @@ function renderQuestion() {
 
 };
 
+funtion nextQuestion() {
+    var userChoice = document.querySelector('input[type=radio]:checked');
+    if(!userChoice){
+        alert("Please select your answer.");
+        return;
+    }
+    var answer = userChoice.value;
+    if(questions[currentQuestion].answer === answer){
+        score += 1;
+    }
+    userChoice.checked = false;
+    currentQuestion++;
+    if (currentQuestion == totquestions){
+        startBtn.style.visibility='hidden';
+        nextBtn.style.visibility='hidden';
+        quizContainer.style.display="none";
+        result.style.display="";
+        result.textContent = score;
+        return;
+    }
+    nextQuestion(currentQuestion);
+}
+
+
 const questionTime = 10;
 var count = 0;
 
@@ -96,8 +120,8 @@ function startQuiz(){
     renderQuestion();
 }
 
-function scoreRender(){
-    let scorePercent = Math.round(100 * score / questions.length);
-    scoreContainer.innerHTML = "<p>" + scorePercent + "%<p>";
+// function scoreRender(){
+//     let scorePercent = Math.round(100 * score / questions.length);
+//     scoreContainer.innerHTML = "<p>" + scorePercent + "%<p>";
             
-}
+// }

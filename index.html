@@ -23,7 +23,8 @@
             <div class="col-md">
                 <div>
 
-                <button type="button" class="btn btn-secondary btn-lg" onclick="startQuiz()">Start Quiz</button>
+                <!-- <button type="button" class="btn btn-secondary btn-lg" onclick="startQuiz()">Start Quiz</button> -->
+                <button  class="btn btn-secondary btn-lg" id="start"onclick="clock();loadQuestion(currentQuestion);">Start</button>
             </div>
                 <br>
 
@@ -34,7 +35,7 @@
                 <label class="option"><input type="radio" name="option" value="2" /><span id="B"></span></label>
                 <label class="option"><input type="radio" name="option" value="3" /><span id="C"></span></label>
                 <br>
-                <button id="start"onclick="clock();loadQuestion(currentQuestion);">Start</button>
+                <!-- <button id="start"onclick="clock();loadQuestion(currentQuestion);">Start</button> -->
                 <button id="next" onclick="loadNextQuestion();">Next</button><br>
                 <button id="submit" onclick="clearInterval(myTimer);disableButton()">Finish</button>
 
