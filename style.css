@@ -4,8 +4,6 @@
     background-image: url("JavaScript2.png");
     background-size: 55%;
     
-
-    
 }
 
 h1 {
@@ -28,7 +26,26 @@ p{
 }
 #scoreContainer {
     background-color: rgb(243, 231, 124);
-    height: 30px;
-    /* padding-top: 20px; */
+    height: 150px;
     border-style: solid;
 }
+.button {
+    background-color: #555555; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .scor {
+      font-size: xx-large;
+  }
+
+  .lead {
+     font-size: xx-large;
+  }

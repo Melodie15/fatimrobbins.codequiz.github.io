@@ -23,21 +23,21 @@
             <div class="col-md">
                 <div>
 
-                <!-- <button type="button" class="btn btn-secondary btn-lg" onclick="startQuiz()">Start Quiz</button> -->
-                <button id="start"onclick="clock();renderQuestion(currentQuestion);">Start</button>
+             
+                <button class="button" id="start"onclick="clock();renderQuestion(currentQuestion);">START</button>
             </div>
                 <br>
 
 
                 <div id="quiz-area">
-                <div id="question" class="question">Questions</div>
+                <div id="question" class="lead" class="question">Questions</div>
                 <label class="option"><input type="radio" name="option" value="A" /><span id="opt1"></span></label>
                 <label class="option"><input type="radio" name="option" value="B" /><span id="opt2"></span></label>
                 <label class="option"><input type="radio" name="option" value="C" /><span id="opt3"></span></label>
                 <br>
-                <!-- <button id="start"onclick="clock();loadQuestion(currentQuestion);">Start</button> -->
-                <button id="next" onclick="nextQuestion();">Next</button><br>
-                <!-- <button id="submit" onclick="clearInterval(timer);disableButton()">Finish</button> -->
+               
+                <button class="button" id="next" onclick="nextQuestion();">NEXT</button><br>
+             
 
                 </div>
                 <br>
@@ -51,7 +51,7 @@
 
 
 
-                <div id="scoreContainer" style="display: none;" placeholder="Score"></div>
+                <div class="scor" id="scoreContainer" style="display: none;" placeholder="Score"></div>
             </div>
         </div>
     </div>

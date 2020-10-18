@@ -8,7 +8,7 @@ var submit = document.getElementById("score");
 
 var currentQuestion = 0;
 var score = 0;
-var counter = 15;
+var counter = 20;
 
 
 var opt1 = document.getElementById("opt1");
@@ -38,6 +38,20 @@ var questions = [
         option2: "parentheses",
         option3: "brackets",
         answer: "A"
+    },
+    {
+        question: "Inside which HTML element do we put the JavaScript",
+        option1: "<js>",
+        option2: "<javascript>",
+        option3: "<script>",
+        answer: "C"
+    },
+    {
+        question: "How do you create a function in Javascript?",
+        option1: "function = myFunction()",
+        option2: "function:myFunction()",
+        option3: "function myFunction()",
+        answer: "C"
     },
 
 ];
