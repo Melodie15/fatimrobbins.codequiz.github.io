@@ -1,15 +1,16 @@
 var start = document.getElementById("start");
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("questions-area");
-var timer = document.getElementById("timer");
+var counter = document.getElementById("timer");
 var score = document.getElementById("score");
 
-start.onclick = startTimer;
 
 
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
+
+var questionChoices= document.getElementById("questionChoices");
 
 
 var scoreContainer = document.getElementById("scoreContainer");
@@ -39,24 +40,37 @@ var questions = [
 
 ];
 
-var lastQuestionIndex = questions.lenght - 1;
-var runningQuestionIndex = 0;
+var lastQuestionIndex = questions.length - 1;
 
 
 function renderQuestion() {
-    var q = questions[runningQuestionIndex];
-    question.innerHTML = "<p>" + q.question + "<p>";
-
-    for (var i = 0; i < q.lenght; i++) {
-
+    for (var i = 0; i < questions.length; i++) {
+        var q = questions[i];
+        var p = document.createElement('p');
+        testQuestion = document.createTextNode(q.question)
+        p.appendChild(testQuestion)
+        question.appendChild(p) ;
+        var nodeA= document.createElement("li")
+        var textA= document.createTextNode(q.choiceA)
+        var nodeB= document.createElement("li")
+        var textB= document.createTextNode(q.choiceB)
+        var nodeC= document.createElement("li")
+        var textC= document.createTextNode(q.choiceC)
+        
+        nodeA.appendChild(textA);
+        nodeB.appendChild(textB);
+        nodeC.appendChild(textC);
+        
+        questionChoices.appendChild(nodeA)
+        ;
+       
     }
 
 };
 
 const questionTime = 10;
 var count = 0;
-var TIMER = setInterval(counterRender, 1000);
-clearInterval(Timer);
+
 
 function counterRender(){
     if( count <= questionTime) {
@@ -75,7 +89,7 @@ function counterRender(){
 }
 var score = 0;
 function checkAnswer(answer){
-    if questions [runningQuestionIndex].correct == answer) {
+    if (questions[runningQuestionIndex].correct == answer) {
         score++;
         answerIsCorrect();
     }else{
@@ -92,16 +106,16 @@ function checkAnswer(answer){
 }
 
 
-let TIMER;
+let timer;
 
 function startQuiz(){
     counterRender();
-    TIMER = setInterval(counterRender, 1000);
+    timer = setInterval(counterRender, 1000);
     renderQuestion();
 }
 
 function scoreRender(){
-    let scorePercent = Math.round(100 * score / questions.lenght);
+    let scorePercent = Math.round(100 * score / questions.length);
     scoreContainer.innerHTML = "<p>" + scorePercent + "%<p>";
             
 }
