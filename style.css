@@ -27,7 +27,9 @@ p{
 #scoreContainer {
     background-color: rgb(243, 231, 124);
     height: 150px;
+   
     border-style: solid;
+    
 }
 .button {
     background-color: #555555; 
