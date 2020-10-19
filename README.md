@@ -10,7 +10,7 @@
 ---
 
 ### Table of Contents
-You're section headers will be used to reference location and destination.
+
 
 - [Description](#description)
 - [Technologies](#technologies)
