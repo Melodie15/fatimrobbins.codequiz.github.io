@@ -38,7 +38,7 @@ Click the Start button, the quiz and timer will run as the questions are rendere
 
 Distributed under the MIT License. See LICENSE for more information.
 
-[Back To The Top](#project-name)
+[Back To The Top](#code-quiz)
 
 ---
 
