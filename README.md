@@ -5,7 +5,7 @@
 
 > Short Project Blurb
 
-______
+---
 
 ### Table of Contents
 You're section headers will be used to reference location and destination.
@@ -16,7 +16,7 @@ You're section headers will be used to reference location and destination.
 -[License](#license)
 -[Author Info](#author-info)
 
-______
+---
 
 ## Description
 
@@ -31,4 +31,8 @@ ______
 
 ### Installation
 
-### API reference
+[Back To The Top](#project-name)
+
+---
+
+## References
